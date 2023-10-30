@@ -1,4 +1,6 @@
 import { Inter } from 'next/font/google'
+import { config } from '@fortawesome/fontawesome-svg-core';
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -9,8 +11,17 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  config.autoAddCss = false;
+
   return (
     <html lang="en">
+       <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+        <style>
+          
+        </style>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
